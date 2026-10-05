@@ -295,7 +295,7 @@
             <main class="shell">
                 <header class="topbar">
                     <a class="brand" href="./" aria-label="LavaLust Products home">
-                        <span class="brand-mark">L</span>
+                        <span class="brand-mark" aria-hidden="true">🍓</span>
                         <span>LavaLust <span class="brand-light">/ Products</span></span>
                     </a>
                     <div v-if="authenticated" class="account">
@@ -309,12 +309,12 @@
 
                 <section v-if="!authenticated" class="auth-layout">
                     <div class="auth-intro">
-                        <p class="eyebrow">INVENTORY, UNDER CONTROL</p>
+                        <span class="sparkle s1" aria-hidden="true">✦</span><span class="sparkle s2" aria-hidden="true">✿</span><span class="sparkle s3" aria-hidden="true">✧</span><p class="eyebrow">INVENTORY, UNDER CONTROL</p>
                         <h1>Good products.<br><span>Clear picture.</span></h1>
                         <p class="intro-copy">Keep your catalog organized, track stock at a glance, and make every update count.</p>
                         <div class="intro-note"><span class="note-line"></span> Powered by the LavaLust API</div>
                     </div>
-                    <div class="auth-card">
+                    <div class="auth-card"><span class="card-bow" aria-hidden="true">🎀</span>
                         <div class="card-heading">
                             <p class="eyebrow">{{ authMode === 'login' ? 'WELCOME BACK' : 'GET STARTED' }}</p>
                             <h2>{{ authMode === 'login' ? 'Sign in to continue' : 'Create your account' }}</h2>
@@ -347,7 +347,7 @@
                 <section v-else class="workspace">
                     <div class="page-heading">
                         <div>
-                            <p class="eyebrow">OVERVIEW</p>
+                            <span class="sparkle s1" aria-hidden="true">✦</span><span class="sparkle s2" aria-hidden="true">✿</span><p class="eyebrow">OVERVIEW</p>
                             <h1>Your products</h1>
                             <p class="page-subtitle">A clear view of your catalog and inventory.</p>
                         </div>
@@ -358,18 +358,18 @@
                     <div v-if="successMessage" class="notice notice-success" role="status">{{ successMessage }}</div>
 
                     <div class="stats-grid">
-                        <article class="stat-card">
-                            <span class="stat-icon stat-icon-purple">P</span>
+                        <article class="stat-card stat-pink">
+                            <span class="stat-icon stat-icon-purple" aria-hidden="true">🛍️</span>
                             <div><p>Total products</p><strong>{{ products.length }}</strong></div>
                             <span class="stat-caption">in catalog</span>
                         </article>
-                        <article class="stat-card">
-                            <span class="stat-icon stat-icon-blue">Q</span>
+                        <article class="stat-card stat-lilac">
+                            <span class="stat-icon stat-icon-blue" aria-hidden="true">📦</span>
                             <div><p>Units in stock</p><strong>{{ inventoryUnits.toLocaleString() }}</strong></div>
                             <span class="stat-caption">across all products</span>
                         </article>
-                        <article class="stat-card">
-                            <span class="stat-icon stat-icon-green">V</span>
+                        <article class="stat-card stat-mint">
+                            <span class="stat-icon stat-icon-green" aria-hidden="true">💖</span>
                             <div><p>Inventory value</p><strong>{{ formatPrice(inventoryValue) }}</strong></div>
                             <span class="stat-caption">price × quantity</span>
                         </article>
@@ -386,7 +386,7 @@
                         </div>
                         <div v-if="loading" class="table-state">Loading your catalog...</div>
                         <div v-else-if="!filteredProducts.length" class="empty-state">
-                            <span class="empty-icon">P</span>
+                            <span class="empty-icon" aria-hidden="true">🌸</span>
                             <h3>{{ search ? 'No matching products' : 'Your catalog is ready' }}</h3>
                             <p>{{ search ? 'Try another product name or clear your search.' : 'Add your first product to start tracking your inventory.' }}</p>
                             <button v-if="!search && isAdmin" class="button button-primary" type="button" @click="openCreate">Add your first product</button>
